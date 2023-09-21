@@ -1,5 +1,22 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+import Vuelidate from 'vuelidate';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+// import VueCookie from 'vue-cookie';
+// import VeeValidate from 'vee-validate';
+import Cookies from 'js-cookie';
+const app = createApp(App);
 
-createApp(App).use(router).mount('#app')
+app.use(VueAxios, axios);
+app.use(Vuelidate);
+app.use(router);
+app.use(Cookies);
+// app.use(VueCookie);
+// app.use(VeeValidate);
+// app.use(VueCarousel);
+app.mount('#app');
